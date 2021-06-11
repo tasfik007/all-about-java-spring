@@ -1,1 +1,10 @@
-# A Simple Web Application in Spring
+# What I have done here?
+- Worked with an in memory database (H2)
+- Created three POJOs Author, Book, Publisher
+- Converted them in JPA entities
+- Connected Author and Book with many to many relation
+- Connected Book and Publisher with many to one relation
+
+## Below are some snapshots from the H2 console:
+
+![Spring H2 Console Shots](https://imgur.com/YgILetx)

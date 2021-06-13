@@ -7,4 +7,4 @@
 
 ## Below are some snapshots from the H2 console:
 
-![Spring H2 Console Shots](https://i.imgur.com/YgILetx.png)
+![Spring H2 Console Shots](https://i.ibb.co/Mfh7Czt/snap2.png)

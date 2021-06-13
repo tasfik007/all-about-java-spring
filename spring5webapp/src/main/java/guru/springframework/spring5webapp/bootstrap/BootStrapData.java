@@ -9,6 +9,9 @@ import guru.springframework.spring5webapp.repositories.PublisherRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Component
 public class BootStrapData implements CommandLineRunner {
     private final AuthorRepository authorRepository;
@@ -50,8 +53,11 @@ public class BootStrapData implements CommandLineRunner {
         authorRepository.save(rod);
         bookRepository.save(book2);
 
-        publisher.getBooks().add(book1);
+        Set<Book>books = new HashSet<>();
+        books.add(book1);
+        publisher.setBooks(books);
         publisher.getBooks().add(book2);
+
         publisherRepository.save(publisher);
         System.out.println("Publisher Book Count: "+ publisher.getBooks().size());
 

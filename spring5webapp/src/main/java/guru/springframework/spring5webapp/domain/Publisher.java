@@ -19,7 +19,7 @@ public class Publisher {
     private String zip;
 
     @OneToMany(mappedBy="publisher")
-    private Set<Book> books = new HashSet<>();
+    private Set<Book> books;
 
     public Set<Book> getBooks() {
         return books;

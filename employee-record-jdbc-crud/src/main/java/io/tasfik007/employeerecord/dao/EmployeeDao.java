@@ -46,7 +46,7 @@ public class EmployeeDao {
                         employee.getEmail());
     }
     public int update(Employee employee) {
-        String query = "update employees " + " set first_name = ?, last_name = ?, email_address = ? " + " where id = ?";
+        String query = "update employees set first_name = ?, last_name = ?, email_address = ? where id = ?";
         return jdbcTemplate.update(query,
                         employee.getFirstName(),
                         employee.getLastName(),

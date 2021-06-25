@@ -1,7 +1,6 @@
 package io.tasfik007.employeerecord.dao;
 
 import io.tasfik007.employeerecord.model.Employee;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -32,7 +31,7 @@ public class EmployeeDao {
     }
     public Employee findById(long id) {
         String query = "select * from employees where id=?";
-        return jdbcTemplate.queryForObject(query, new BeanPropertyRowMapper<>(Employee.class),id);
+        return jdbcTemplate.queryForObject(query, employeeRowMapper,id);
     }
     public int deleteById(long id) {
         String query = "delete from employees where id=?";

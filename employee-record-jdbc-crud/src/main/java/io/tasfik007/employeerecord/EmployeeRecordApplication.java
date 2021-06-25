@@ -26,21 +26,27 @@ public class EmployeeRecordApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
 
-        Employee employee1 = new Employee(10011L, "Captain", "America", "captain@gmail.com");
-        Employee employee2 = new Employee(10012L, "Black", "Widow", "blacwidow@gmail.com");
-        Employee employee3 = new Employee(10013L, "Tony", "Stark", "stark@gmail.com");
+        //some initial dummy data inserted via resources/data.sql
 
-        logger.info("Inserting -> {}", employeeDao.insert(employee1));
-        logger.info("Inserting -> {}", employeeDao.insert(employee2));
-        logger.info("Inserting -> {}", employeeDao.insert(employee3));
+        Employee employee = new Employee(
+                10014L,
+                "Tasfik",
+                "Rahman",
+                "tasfik@mail.com"
+        );
+        logger.info("Inserting -> {}", employeeDao.insert(employee));
 
         logger.info("Employee id 10011 -> {}", employeeDao.findById(10011L));
 
-        Employee updatedEmployee = new Employee(10011L, "Sansa", "Stark", "sansa@gmail.com");
-        logger.info("Update 10003 -> {}", employeeDao.update(updatedEmployee));
+        Employee updatedEmployee = new Employee(
+                10011L,
+                "Sansa",
+                "Stark", 
+                "sansa@mail.com"
+        );
+        logger.info("Update 10011 -> {}", employeeDao.update(updatedEmployee));
 
         logger.info("Deleting Employee id 10013 -> {}", employeeDao.deleteById(10013L));
-
         logger.info("All users -> {}", employeeDao.findAll());
 
     }
